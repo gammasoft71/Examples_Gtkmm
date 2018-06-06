@@ -1,7 +1,7 @@
 
 # Gtkmm Examples
 
-Shows how to use Gtkmm controls by programming code (c++14).
+Shows how to use Gtkmm controls (c++14).
 
 ## Hello World
 
@@ -61,6 +61,19 @@ git clone https://github.com/gammasoft71/GtkmmExamples GtkmmExamples
 
 To build this project, open "Terminal" and type following lines:
 
+### macOS :
+
+
+``` cmake
+mkdir build
+cd build
+cmake .. -G "Xcode"
+open ./CocoaExamples.xcodeproj
+```
+
+
+### Linux :
+
 ``` cmake
 mkdir build
 cd build
@@ -70,4 +83,4 @@ cmake --build . --config Debug
 
 ## Remarks
 
-This project run only on macOS with [Gtkmm 3](https://www.gtkmm.org) and [CMake](https://cmake.org).
+This project run with [Gtkmm 3](https://www.gtkmm.org) and [CMake](https://cmake.org).
