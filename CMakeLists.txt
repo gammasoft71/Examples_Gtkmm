@@ -34,7 +34,7 @@ add_subdirectory("src/TabControl")
 #add_subdirectory("src/MainMenu")
 
 # Components
-#add_subdirectory("src/Timer")
+add_subdirectory("src/Timer")
 
 # Dialogs
 #add_subdirectory("src/ColorDialog")
