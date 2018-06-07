@@ -25,7 +25,6 @@ private:
   Entry textBox1;
 };
 
-// The main entry point for the application.
 int main(int argc, char* argv[]) {
   RefPtr<Application> application = Application::create(argc, argv);
   Form form;

@@ -54,7 +54,6 @@ private:
   int button2Clicked = 0;
 };
 
-// The main entry point for the application.
 int main(int argc, char* argv[]) {
   RefPtr<Application> application = Application::create(argc, argv);
   Form form;
