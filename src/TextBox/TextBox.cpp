@@ -14,7 +14,7 @@ public:
     this->fixed.child_property_x(this->textBox1) = 10;
     this->fixed.child_property_y(this->textBox1) = 10;
     
-    this->set_title("Label example");
+    this->set_title("TextBox example");
     this->set_size_request(300, 300);
     this->show_all();
   }
