@@ -63,7 +63,6 @@ To build this project, open "Terminal" and type following lines:
 
 ### macOS :
 
-
 ``` cmake
 mkdir build
 cd build
