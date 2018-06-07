@@ -50,7 +50,7 @@ public:
       return true;
     }, 100);
     
-    this->set_title("Label example");
+    this->set_title("ProgressBar example");
     this->set_size_request(300, 300);
     this->show_all();
   }
