@@ -49,7 +49,15 @@ Shows how to use Gtkmm controls (c++14).
 
 [ColorDialog](src/ColorDialog) Shows how to create a ColorDialog with Gtk::ColorChooserDialog.
 
+[FolderBrowserDialog](src/FolderBrowserDialog) Shows how to create a FolderBrowserDialog with Gtk::FileChooserDialog.
+
+[FontDialog](src/FontDialog) Shows how to create a FontDialog with Gtk::FontChooserDialog.
+
+[OpenFileDialog](src/OpenFileDialog) Shows how to create an OpenFileDialog with Gtk::FileChooserDialog.
+
 [MessageBox](src/MessageBox) Shows how to create a MessageBox with Gtk::MessageDialog.
+
+[SaveFileDialog](src/SaveFileDialog) Shows how to create an SaveFileDialog with Gtk::FileChooserDialog.
 
 ## Download
 
