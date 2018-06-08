@@ -39,7 +39,7 @@ Shows how to use Gtkmm controls (c++14).
 
 ## Menus and toolbars
 
-[MainMenu](src/MainMenu) Shows how to create a Gtkmm MainMenu with NSMenu and Gtk::MenuBar.
+[MainMenu](src/MainMenu) Shows how to create a Gtkmm MainMenu with Gtk::MenuBar, Gtk::Menu and Gtk::MenuItem.
 
 ## Components
 
