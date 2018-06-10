@@ -15,11 +15,11 @@ public:
     this->fixed.child_property_x(this->button) = 10;
     this->fixed.child_property_y(this->button) = 10;
     this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
-      Gtk::FontChooserDialog fontChooserDialog("");
-      fontChooserDialog.set_transient_for(*this);
-      fontChooserDialog.set_font_desc(this->label.get_style_context()->get_font());
-      if (fontChooserDialog.run() == RESPONSE_OK)
-        this->label.override_font(fontChooserDialog.get_font_desc());
+      Gtk::FontChooserDialog fontDialog("");
+      fontDialog.set_transient_for(*this);
+      fontDialog.set_font_desc(this->label.get_style_context()->get_font());
+      if (fontDialog.run() == RESPONSE_OK)
+        this->label.override_font(fontDialog.get_font_desc());
       return true;
     });
 
