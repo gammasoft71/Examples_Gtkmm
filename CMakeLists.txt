@@ -42,7 +42,7 @@ add_subdirectory("src/FolderBrowserDialog")
 add_subdirectory("src/FontDialog")
 add_subdirectory("src/OpenFileDialog")
 add_subdirectory("src/MessageBox")
-#add_subdirectory("src/SaveFileDialog")
+add_subdirectory("src/SaveFileDialog")
 
 # Other
 #add_subdirectory("src/Drawing")
