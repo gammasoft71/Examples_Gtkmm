@@ -13,8 +13,7 @@ public:
       return true;
     });
     this->fixed.add(this->button);
-    this->fixed.child_property_x(this->button) = 10;
-    this->fixed.child_property_y(this->button) = 10;
+    this->fixed.move(this->button, 10, 10);
 
     this->set_title("Form Example");
     this->move(320, 200);

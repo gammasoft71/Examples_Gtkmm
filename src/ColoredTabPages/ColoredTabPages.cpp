@@ -12,8 +12,7 @@ public:
     
     this->tabControl1.set_size_request(370, 250);
     fixed.add(this->tabControl1);
-    fixed.child_property_x(this->tabControl1) = 10;
-    fixed.child_property_y(this->tabControl1) = 10;
+    this->fixed.move(this->tabControl1, 10, 10);
 
     this->tabControl1.insert_page(this->tabPageRed, "Red", 0);
     this->tabControl1.insert_page(this->tabPageGreen, "Green", 1);

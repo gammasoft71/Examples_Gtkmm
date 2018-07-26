@@ -11,32 +11,27 @@ public:
     this->scrolledWindow.add(this->fixed);
     
     this->fixed.add(this->progressBar1);
-    this->fixed.child_property_x(this->progressBar1) = 50;
-    this->fixed.child_property_y(this->progressBar1) = 50;
+    this->fixed.move(this->progressBar1, 50, 50);
     this->progressBar1.set_size_request(200, 10);
     this->progressBar1.set_fraction(0.0);
     
     this->fixed.add(this->progressBar2);
-    this->fixed.child_property_x(this->progressBar2) = 50;
-    this->fixed.child_property_y(this->progressBar2) = 80;
+    this->fixed.move(this->progressBar2, 50, 80);
     this->progressBar2.set_size_request(200, 10);
     this->progressBar2.set_fraction(0.5);
     
     this->fixed.add(this->progressBar3);
-    this->fixed.child_property_x(this->progressBar3) = 50;
-    this->fixed.child_property_y(this->progressBar3) = 110;
+    this->fixed.move(this->progressBar3, 50, 110);
     this->progressBar3.set_size_request(200, 10);
     this->progressBar3.set_fraction(1.0);
     
     this->fixed.add(this->progressBar4);
-    this->fixed.child_property_x(this->progressBar4) = 50;
-    this->fixed.child_property_y(this->progressBar4) = 140;
+    this->fixed.move(this->progressBar4, 50, 140);
     this->progressBar4.set_size_request(200, 10);
     this->progressBar4.set_fraction(0.0);
     
     this->fixed.add(this->progressBar5);
-    this->fixed.child_property_x(this->progressBar5) = 50;
-    this->fixed.child_property_y(this->progressBar5) = 170;
+    this->fixed.move(this->progressBar5, 50, 170);
     this->progressBar5.set_size_request(200, 10);
     this->progressBar5.set_fraction(0.0);
     

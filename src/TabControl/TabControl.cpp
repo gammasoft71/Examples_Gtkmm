@@ -12,8 +12,7 @@ public:
     
     this->tabControl1.set_size_request(370, 250);
     this->fixed.add(this->tabControl1);
-    this->fixed.child_property_x(this->tabControl1) = 10;
-    this->fixed.child_property_y(this->tabControl1) = 10;
+    this->fixed.move(this->tabControl1, 10, 10);
 
     this->tabControl1.insert_page(this->tabPage1, "tabPage1", 0);
     this->tabControl1.insert_page(this->tabPage2, "tabPage2", 1);
@@ -26,8 +25,7 @@ public:
     this->tabPage1.add(this->fixedTabPage1);
 
     this->fixedTabPage1.add(this->radioTop);
-    this->fixedTabPage1.child_property_x(this->radioTop) = 10;
-    this->fixedTabPage1.child_property_y(this->radioTop) = 10;
+    this->fixedTabPage1.move(this->radioTop, 10, 10);
     this->radioTop.set_label("Top");
     this->radioTop.set_group(this->radioButtonGroup);
     this->radioTop.signal_toggled().connect([this]() {
@@ -35,8 +33,7 @@ public:
     });
 
     this->fixedTabPage1.add(this->radioLeft);
-    this->fixedTabPage1.child_property_x(this->radioLeft) = 10;
-    this->fixedTabPage1.child_property_y(this->radioLeft) = 40;
+    this->fixedTabPage1.move(this->radioLeft, 10, 40);
     this->radioLeft.set_label("Left");
     this->radioLeft.set_group(this->radioButtonGroup);
     this->radioLeft.signal_toggled().connect([this]() {
@@ -44,8 +41,7 @@ public:
     });
 
     this->fixedTabPage1.add(this->radioRight);
-    this->fixedTabPage1.child_property_x(this->radioRight) = 10;
-    this->fixedTabPage1.child_property_y(this->radioRight) = 70;
+    this->fixedTabPage1.move(this->radioRight, 10, 70);
     this->radioRight.set_label("Right");
     this->radioRight.set_group(this->radioButtonGroup);
     this->radioRight.signal_toggled().connect([this]() {
@@ -53,8 +49,7 @@ public:
     });
 
     this->fixedTabPage1.add(this->radioBottom);
-    this->fixedTabPage1.child_property_x(this->radioBottom) = 10;
-    this->fixedTabPage1.child_property_y(this->radioBottom) = 100;
+    this->fixedTabPage1.move(this->radioBottom, 10, 100);
     this->radioBottom.set_label("Bottom");
     this->radioBottom.set_group(this->radioButtonGroup);
     this->radioBottom.signal_toggled().connect([this]() {

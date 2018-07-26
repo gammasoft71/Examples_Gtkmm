@@ -15,8 +15,7 @@ public:
       return true;
     });
     this->fixed.add(this->button1);
-    this->fixed.child_property_x(this->button1) = 50;
-    this->fixed.child_property_y(this->button1) = 50;
+    this->fixed.move(this->button1, 50, 50);
     
     this->button2.set_label("button2");
     this->button2.set_size_request(200, 75);
@@ -25,18 +24,15 @@ public:
       return true;
     });
     this->fixed.add(this->button2);
-    this->fixed.child_property_x(this->button2) = 50;
-    this->fixed.child_property_y(this->button2) = 100;
+    this->fixed.move(this->button2, 50, 100);
     
     this->label1.set_text(ustring::compose("button1 clicked %1 times", this->button1Clicked));
     this->fixed.add(this->label1);
-    this->fixed.child_property_x(this->label1) = 50;
-    this->fixed.child_property_y(this->label1) = 200;
+    this->fixed.move(this->label1, 50, 200);
     
     this->label2.set_text(ustring::compose("button2 clicked %1 times", this->button2Clicked));
     this->fixed.add(this->label2);
-    this->fixed.child_property_x(this->label2) = 50;
-    this->fixed.child_property_y(this->label2) = 230;
+    this->fixed.move(this->label2, 50, 230);
     
     this->set_title("Button example");
     this->resize(300, 300);

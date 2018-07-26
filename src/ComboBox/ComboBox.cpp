@@ -11,8 +11,7 @@ public:
     this->scrolledWindow.add(this->fixed);
 
     this->fixed.add(this->comboBox1);
-    this->fixed.child_property_x(this->comboBox1) = 10;
-    this->fixed.child_property_y(this->comboBox1) = 10;
+    this->fixed.move(this->comboBox1, 10, 10);
 
     this->comboBox1.append("item1");
     this->comboBox1.append("item2");

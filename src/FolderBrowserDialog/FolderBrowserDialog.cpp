@@ -12,8 +12,7 @@ public:
     
     this->button.set_label("Folder...");
     this->fixed.add(this->button);
-    this->fixed.child_property_x(this->button) = 10;
-    this->fixed.child_property_y(this->button) = 10;
+    this->fixed.move(this->button, 10, 10);
     this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
       FileChooserDialog folderBrowserDialog("", FILE_CHOOSER_ACTION_SELECT_FOLDER);
       folderBrowserDialog.add_button("Cancel", RESPONSE_CANCEL);
@@ -27,8 +26,7 @@ public:
 
     this->label.set_text("Path = ");
     this->fixed.add(this->label);
-    this->fixed.child_property_x(this->label) = 10;
-    this->fixed.child_property_y(this->label) = 50;
+    this->fixed.move(this->label, 10, 50);
 
     this->set_title("FolderBrowserDialog example");
     this->resize(300, 300);

@@ -11,14 +11,12 @@ public:
     
     this->groupBox1.set_label("GroupBox 1");
     this->fixed.add(this->groupBox1);
-    this->fixed.child_property_x(this->groupBox1) = 10;
-    this->fixed.child_property_y(this->groupBox1) = 10;
+    this->fixed.move(this->groupBox1, 10, 10);
     this->groupBox1.set_size_request(305, 460);
     
     this->groupBox2.set_label("GroupBox 2");
     this->fixed.add(this->groupBox2);
-    this->fixed.child_property_x(this->groupBox2) = 325;
-    this->fixed.child_property_y(this->groupBox2) = 10;
+    this->fixed.move(this->groupBox2, 325, 10);
     this->groupBox2.set_size_request(305, 460);
 
     this->set_title("GroupBox example");

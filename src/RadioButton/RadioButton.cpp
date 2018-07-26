@@ -13,20 +13,17 @@ public:
     this->radioButton1.set_active(true);
     this->radioButton1.set_group(this->radioButtonGroup1);
     this->fixed.add(this->radioButton1);
-    this->fixed.child_property_x(this->radioButton1) = 30;
-    this->fixed.child_property_y(this->radioButton1) = 30;
+    this->fixed.move(this->radioButton1, 30, 30);
     
     this->radioButton2.set_label("radioButton 2");
     this->radioButton2.set_group(this->radioButtonGroup1);
     this->fixed.add(this->radioButton2);
-    this->fixed.child_property_x(this->radioButton2) = 30;
-    this->fixed.child_property_y(this->radioButton2) = 60;
+    this->fixed.move(this->radioButton2, 30, 60);
     
     this->radioButton3.set_label("radioButton 3");
     this->radioButton3.set_group(this->radioButtonGroup1);
     this->fixed.add(this->radioButton3);
-    this->fixed.child_property_x(this->radioButton3) = 30;
-    this->fixed.child_property_y(this->radioButton3) = 90;
+    this->fixed.move(this->radioButton3, 30, 90);
 
     this->set_title("RadioButton example");
     this->resize(300, 300);

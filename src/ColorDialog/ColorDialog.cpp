@@ -11,8 +11,7 @@ public:
     
     this->button.set_label("Color...");
     this->fixed.add(this->button);
-    this->fixed.child_property_x(this->button) = 10;
-    this->fixed.child_property_y(this->button) = 10;
+    this->fixed.move(this->button, 10, 10);
     this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
       ColorChooserDialog colorDialog("");
       colorDialog.set_rgba(this->get_style_context()->get_background_color());

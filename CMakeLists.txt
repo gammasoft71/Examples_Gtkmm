@@ -47,3 +47,6 @@ add_subdirectory("src/SaveFileDialog")
 
 # Other
 #add_subdirectory("src/Drawing")
+
+add_subdirectory("src/Test")
+

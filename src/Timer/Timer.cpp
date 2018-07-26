@@ -13,18 +13,16 @@ public:
     this->label.set_text(ustring::format(std::fixed, std::setprecision(1), (double)this->counter / 10));
     this->label.override_color(Gdk::RGBA("#1E90FF"));
     Pango::FontDescription textFont("Arial");
-    textFont.set_size(64 * PANGO_SCALE);
+    textFont.set_size(48 * PANGO_SCALE);
     textFont.set_style(Pango::Style::STYLE_ITALIC);
     textFont.set_weight(Pango::Weight::WEIGHT_BOLD);
     this->label.override_font(textFont);
     this->fixed.add(this->label);
-    this->fixed.child_property_x(this->label) = 10;
-    this->fixed.child_property_y(this->label) = 10;
+    this->fixed.move(this->label, 10, 10);
 
     this->button.set_label("Start");
     this->fixed.add(this->button);
-    this->fixed.child_property_x(this->button) = 10;
-    this->fixed.child_property_y(this->button) = 90;
+    this->fixed.move(this->button, 10, 90);
     this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
       this->enableTimer = !this->enableTimer;
       this->button.set_label(this->enableTimer ? "Stop" : "Start");

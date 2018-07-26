@@ -12,21 +12,18 @@ public:
     this->checkBox1.set_label("Checked");
     this->checkBox1.set_active(true);
     this->fixed.add(this->checkBox1);
-    this->fixed.child_property_x(this->checkBox1) = 30;
-    this->fixed.child_property_y(this->checkBox1) = 30;
+    this->fixed.move(this->checkBox1, 30, 30);
     
     this->checkBox2.set_label("Unchecked");
     this->checkBox2.set_active(false);
     this->fixed.add(this->checkBox2);
-    this->fixed.child_property_x(this->checkBox2) = 30;
-    this->fixed.child_property_y(this->checkBox2) = 60;
+    this->fixed.move(this->checkBox2, 30, 60);
     
     this->checkBox3.set_label("Indeterminate");
     this->checkBox3.set_inconsistent(true);
     this->checkBox3.set_active(false);
     this->fixed.add(this->checkBox3);
-    this->fixed.child_property_x(this->checkBox3) = 30;
-    this->fixed.child_property_y(this->checkBox3) = 90;
+    this->fixed.move(this->checkBox3, 30, 90);
 
     this->set_title("CheckBox example");
     this->resize(300, 300);

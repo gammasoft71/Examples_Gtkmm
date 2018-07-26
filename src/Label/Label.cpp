@@ -11,8 +11,7 @@ public:
     
     this->label1.set_text("label1");
     this->fixed.add(this->label1);
-    this->fixed.child_property_x(this->label1) = 10;
-    this->fixed.child_property_y(this->label1) = 10;
+    this->fixed.move(this->label1, 10, 10);
     
     this->set_title("Label example");
     this->resize(300, 300);

@@ -18,8 +18,7 @@ public:
     textFont.set_weight(Pango::Weight::WEIGHT_BOLD);
     this->label1.override_font(textFont);
     this->fixed.add(this->label1);
-    this->fixed.child_property_x(this->label1) = 5;
-    this->fixed.child_property_y(this->label1) = 100;
+    this->fixed.move(this->label1, 5, 100);
     
     this->set_title("My first application");
     this->resize(300, 300);

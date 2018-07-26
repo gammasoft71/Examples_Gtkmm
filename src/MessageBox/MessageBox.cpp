@@ -12,8 +12,7 @@ public:
     
     this->button.set_label("MessageBox");
     this->fixed.add(this->button);
-    this->fixed.child_property_x(this->button) = 10;
-    this->fixed.child_property_y(this->button) = 10;
+    this->fixed.move(this->button, 10, 10);
     this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
       MessageDialog messageBox(*this, "Hello, World!", true, MESSAGE_INFO, BUTTONS_OK_CANCEL, true);
       messageBox.set_title("Message");
@@ -26,8 +25,7 @@ public:
 
     this->labelDialogResult.set_text("");
     this->fixed.add(this->labelDialogResult);
-    this->fixed.child_property_x(this->labelDialogResult) = 10;
-    this->fixed.child_property_y(this->labelDialogResult) = 50;
+    this->fixed.move(this->labelDialogResult, 10, 50);
 
     this->set_title("MessageBox example");
     this->resize(300, 300);

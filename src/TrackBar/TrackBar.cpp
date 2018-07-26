@@ -10,8 +10,7 @@ public:
     this->scrolledWindow.add(this->fixed);
 
     this->fixed.add(this->trackBar);
-    this->fixed.child_property_x(this->trackBar) = 20;
-    this->fixed.child_property_y(this->trackBar) = 50;
+    this->fixed.move(this->trackBar, 20, 50);
     this->trackBar.set_size_request(200, 10);
     this->trackBar.set_range(0.0, 200.0);
     this->trackBar.set_draw_value(false);
@@ -22,13 +21,11 @@ public:
     this->trackBar.set_value(100);
 
     this->fixed.add(this->progressBar);
-    this->fixed.child_property_x(this->progressBar) = 20;
-    this->fixed.child_property_y(this->progressBar) = 100;
+    this->fixed.move(this->progressBar, 20, 100);
     this->progressBar.set_size_request(200, 10);
 
     this->fixed.add(this->label);
-    this->fixed.child_property_x(this->label) = 20;
-    this->fixed.child_property_y(this->label) = 150;
+    this->fixed.move(this->label, 20, 150);
     
     this->set_title("TrackBar example");
     this->resize(300, 300);

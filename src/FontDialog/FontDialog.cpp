@@ -12,8 +12,7 @@ public:
     
     this->button.set_label("Font...");
     this->fixed.add(this->button);
-    this->fixed.child_property_x(this->button) = 10;
-    this->fixed.child_property_y(this->button) = 10;
+    this->fixed.move(this->button, 10, 10);
     this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
       Gtk::FontChooserDialog fontDialog("");
       fontDialog.set_transient_for(*this);
@@ -33,8 +32,7 @@ public:
                          "\u4eb0\u4eb1\u4eb2\u4eb3\u4eb4\u4eb5\u4eb6\u4eb7\u4eb8\u4eb9\u4eba\u4ebb\u4ebc\u4ebd\u4ebe\u4ebf\n"
                          "\U0001F428");
     this->fixed.add(this->label);
-    this->fixed.child_property_x(this->label) = 10;
-    this->fixed.child_property_y(this->label) = 50;
+    this->fixed.move(this->label, 10, 50);
 
     this->set_title("FontDialog example");
     this->resize(400, 400);
