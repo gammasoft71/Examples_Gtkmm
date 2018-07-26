@@ -17,6 +17,8 @@ Shows how to use Gtkmm controls (c++14).
 
 [CheckBox](src/CheckBox) Shows how to create a Gtkmm CheckBox with Gtk::CheckButton.
 
+[ComboBox](src/ComboBox) Shows how to create a Gtkmm ComboBox with Gtk::ComboBoxText.
+
 [Label](src/Label) Shows how to create a Gtkmm Label with Gtk::Label.
 
 [ProgressBar](src/ProgressBar) Shows how to create a Gtkmm ProgressBar with Gtk::ProgressBar.
