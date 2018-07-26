@@ -35,7 +35,7 @@ Shows how to use Gtkmm controls (c++14).
 
 [Panel](src/Panel) Shows how to create a simple Gtkmm Panel with Gtk::Frame.
 
-[TabControl](src/TabControl) Shows how to create a simple Gtkmm TabControl with TabPages with NSTabView and Gtk::Notebook.
+[TabControl](src/TabControl) Shows how to create a simple Gtkmm TabControl with TabPages with Gtk::Frame and Gtk::Notebook.
 
 ## Menus and toolbars
 

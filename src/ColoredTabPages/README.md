@@ -1,4 +1,4 @@
-# TabControl
+# ColoredTabPages
 
 This example demonstrates the use of Gtk::Frame and Gtk::Notebook controls.
 

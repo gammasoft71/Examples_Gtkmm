@@ -30,7 +30,7 @@ public:
     this->fixed.child_property_x(this->label) = 20;
     this->fixed.child_property_y(this->label) = 150;
     
-    this->set_title("Label example");
+    this->set_title("TrackBar example");
     this->set_size_request(300, 300);
     this->show_all();
   }
