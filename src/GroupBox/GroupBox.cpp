@@ -22,7 +22,7 @@ public:
     this->groupBox2.set_size_request(305, 460);
 
     this->set_title("GroupBox example");
-    this->set_size_request(640, 480);
+    this->resize(640, 480);
     this->show_all();
   }
   

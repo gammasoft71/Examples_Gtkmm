@@ -26,7 +26,7 @@ public:
     this->tabPageYellow.override_background_color(Gdk::RGBA("#FFFF00"));
 
     this->set_title("TabControl example");
-    this->set_size_request(390, 270);
+    this->resize(390, 270);
     this->show_all();
   }
   

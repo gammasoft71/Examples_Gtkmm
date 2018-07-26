@@ -38,7 +38,7 @@ public:
     });
 
     this->set_title("Timer example");
-    this->set_size_request(230, 130);
+    this->resize(230, 130);
     this->show_all();
   }
   

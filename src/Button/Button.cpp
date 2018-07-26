@@ -39,7 +39,7 @@ public:
     this->fixed.child_property_y(this->label2) = 230;
     
     this->set_title("Button example");
-    this->set_size_request(300, 300);
+    this->resize(300, 300);
     this->show_all();
   }
   

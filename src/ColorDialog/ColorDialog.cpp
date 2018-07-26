@@ -25,7 +25,7 @@ public:
 
     
     this->set_title("ColorDialog example");
-    this->set_size_request(300, 300);
+    this->resize(300, 300);
     this->show_all();
   }
   

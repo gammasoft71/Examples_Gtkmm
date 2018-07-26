@@ -37,7 +37,7 @@ public:
     this->fixed.child_property_y(this->label) = 50;
 
     this->set_title("FontDialog example");
-    this->set_size_request(400, 400);
+    this->resize(400, 400);
     this->show_all();
   }
   

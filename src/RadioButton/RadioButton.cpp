@@ -29,7 +29,7 @@ public:
     this->fixed.child_property_y(this->radioButton3) = 90;
 
     this->set_title("RadioButton example");
-    this->set_size_request(300, 300);
+    this->resize(300, 300);
     this->show_all();
   }
   

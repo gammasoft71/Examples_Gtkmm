@@ -51,7 +51,7 @@ public:
     }, 100);
     
     this->set_title("ProgressBar example");
-    this->set_size_request(300, 300);
+    this->resize(300, 300);
     this->show_all();
   }
   

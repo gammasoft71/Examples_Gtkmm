@@ -18,7 +18,7 @@ public:
 
     this->set_title("Form Example");
     this->move(320, 200);
-    this->set_size_request(640, 480);
+    this->resize(640, 480);
     this->add(this->scrolledWindow);
     this->show_all();
   }
