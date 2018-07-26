@@ -1,3 +1,4 @@
+#include <iostream>
 #include <gtkmm.h>
 
 using namespace Glib;
@@ -8,13 +9,17 @@ public:
   Form() {
     this->add(this->scrolledWindow);
     this->scrolledWindow.add(this->fixed);
-    
-    this->label1.set_text("label1");
-    this->fixed.add(this->label1);
-    this->fixed.child_property_x(this->label1) = 10;
-    this->fixed.child_property_y(this->label1) = 10;
-    
-    this->set_title("Label example");
+
+    this->fixed.add(this->comboBox1);
+    this->fixed.child_property_x(this->comboBox1) = 10;
+    this->fixed.child_property_y(this->comboBox1) = 10;
+
+    this->comboBox1.append("item1");
+    this->comboBox1.append("item2");
+    this->comboBox1.append("item3");
+    this->comboBox1.set_active(1);
+
+    this->set_title("ComboBox example");
     this->resize(300, 300);
     this->show_all();
   }
@@ -22,7 +27,7 @@ public:
 private:
   Fixed fixed;
   ScrolledWindow scrolledWindow;
-  Label label1;
+  ComboBoxText comboBox1 {true};
 };
 
 int main(int argc, char* argv[]) {

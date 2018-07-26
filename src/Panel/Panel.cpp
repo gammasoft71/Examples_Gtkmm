@@ -22,7 +22,7 @@ public:
     this->panel2.set_shadow_type(Gtk::SHADOW_ETCHED_IN);
 
     this->set_title("Panel example");
-    this->set_size_request(640, 480);
+    this->resize(640, 480);
     this->show_all();
   }
   
