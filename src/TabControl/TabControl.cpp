@@ -37,7 +37,7 @@ public:
     this->fixedTabPage1.add(this->radioLeft);
     this->fixedTabPage1.child_property_x(this->radioLeft) = 10;
     this->fixedTabPage1.child_property_y(this->radioLeft) = 40;
-    this->radioLeft.set_label("Leff");
+    this->radioLeft.set_label("Left");
     this->radioLeft.set_group(this->radioButtonGroup);
     this->radioLeft.signal_toggled().connect([this]() {
       this->tabControl1.set_tab_pos(PositionType::POS_LEFT);
