@@ -1,7 +1,7 @@
 
 # Gtkmm Examples
 
-Shows how to use Gtkmm controls (c++14).
+Shows how to use Gtkmm controls (c++17).
 
 ## Hello World
 
