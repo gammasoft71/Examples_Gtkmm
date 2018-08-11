@@ -1,4 +1,3 @@
-#include <iostream>
 #include <gtkmm.h>
 
 using namespace Glib;
@@ -24,7 +23,7 @@ public:
     this->tabPageBlue.override_background_color(Gdk::RGBA("#0000FF"));
     this->tabPageYellow.override_background_color(Gdk::RGBA("#FFFF00"));
 
-    this->set_title("TabControl example");
+    this->set_title("Colored TabPages example");
     this->resize(390, 270);
     this->show_all();
   }
