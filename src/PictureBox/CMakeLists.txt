@@ -21,5 +21,7 @@ endif()
 include_directories(${GTKMM_INCLUDE_DIRS})
 link_directories(${GTKMM_LIBRARY_DIRS})
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Resources/Logo.png ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Resources/Logo.png COPYONLY)
+
 add_executable(PictureBox ${GUI_OPTION} PictureBox.cpp)
 target_link_libraries(PictureBox ${GTKMM_LIBRARIES})
