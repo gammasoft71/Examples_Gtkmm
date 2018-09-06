@@ -9,8 +9,12 @@ public:
     this->add(this->scrolledWindow);
     this->scrolledWindow.add(this->fixed);
     
-    this->fixed.add(this->pictureBox1);
-    this->fixed.move(this->pictureBox1, 10, 10);
+    this->fixed.add(this->panel1);
+    this->fixed.move(this->panel1, 10, 10);
+    this->panel1.set_shadow_type(Gtk::SHADOW_IN);
+    this->panel1.set_size_request(280, 280);
+
+    this->panel1.add(this->pictureBox1);
     this->pictureBox1.set_size_request(280, 280);
     this->pictureBox1.set("Resources/Logo.png");
 
@@ -22,6 +26,7 @@ public:
 private:
   Fixed fixed;
   ScrolledWindow scrolledWindow;
+  Frame panel1;
   Image pictureBox1;
 };
 
