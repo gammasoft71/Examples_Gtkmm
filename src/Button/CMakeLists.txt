@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
-project(Button VERSION 1.0.0)
+project(Button)
 
-find_path(GTKMM_INCLUDE_DIRS gtkmm.h)
-find_library(GTKMM_LIBRARY gtkmm-3.0)
+find_package(PkgConfig)
+pkg_check_modules(GTKMM gtkmm-3.0)
 include_directories(${GTKMM_INCLUDE_DIRS})
 link_directories(${GTKMM_LIBRARY_DIRS})
 link_libraries(${GTKMM_LIBRARIES})
