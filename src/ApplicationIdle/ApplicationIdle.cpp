@@ -1,6 +1,7 @@
 #include <chrono>
 #include <gtkmm.h>
 
+using namespace std::chrono_literals;
 using namespace Glib;
 using namespace Gtk;
 
@@ -16,8 +17,8 @@ public:
 private:
   bool OnApplicationIdle() {
     static std::chrono::high_resolution_clock::time_point lastIdleTime;
-    std::chrono::milliseconds elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - lastIdleTime);
-    if (elapsedTime.count() >= 100) {
+    std::chrono::high_resolution_clock::duration elapsedTime = std::chrono::high_resolution_clock::now() - lastIdleTime;
+    if (elapsedTime >= 100ms) {
       this->set_title(ustring::compose("%1", ++this->counter));
       lastIdleTime = std::chrono::high_resolution_clock::now();
     }
