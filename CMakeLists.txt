@@ -12,6 +12,7 @@ add_subdirectory("src/HelloWorld")
 
 # Application and messages
 add_subdirectory("src/Application")
+add_subdirectory("src/ApplicationIdle")
 #add_subdirectory("src/ApplicationWithMessageLoop")
 
 # Common Controls
