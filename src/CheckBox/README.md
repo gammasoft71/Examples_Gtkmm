@@ -2,4 +2,4 @@
 
 This example demonstrates the use of Gtk::CheckButton control.
 
-![GitHub Logo](../../docs/Pictures/CheckBox.png)
+![Screenshot](../../docs/Pictures/CheckBox.png)

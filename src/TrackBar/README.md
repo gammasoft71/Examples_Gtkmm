@@ -2,4 +2,4 @@
 
 This example demonstrates the use of Gtk::Scale control.
 
-![GitHub Logo](../../docs/Pictures/TrackBar.png)
+![Screenshot](../../docs/Pictures/TrackBar.png)

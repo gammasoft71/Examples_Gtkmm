@@ -2,4 +2,4 @@
 
 This example demonstrates the use of Gtk::ColorChooserDialog dialog.
 
-![GitHub Logo](../../docs/Pictures/ColorDialog.png)
+![Screenshot](../../docs/Pictures/ColorDialog.png)
