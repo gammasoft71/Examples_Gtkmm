@@ -1,12 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(GtkmmExamples)
 
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "")
-  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
-else()
-  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE})
-endif()
-
 # Hello World
 add_subdirectory("src/HelloWorld")
 
