@@ -7,30 +7,30 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->button.set_label("Folder...");
-    this->fixed.add(this->button);
-    this->fixed.move(this->button, 10, 10);
-    this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
+    button.set_label("Folder...");
+    fixed.add(button);
+    fixed.move(button, 10, 10);
+    button.signal_button_release_event().connect([&](GdkEventButton* event) {
       FileChooserDialog folderBrowserDialog("", FILE_CHOOSER_ACTION_SELECT_FOLDER);
       folderBrowserDialog.add_button("Cancel", RESPONSE_CANCEL);
       folderBrowserDialog.add_button("Open", RESPONSE_OK);
       folderBrowserDialog.set_current_folder(ustring::compose("%1/Desktop", ustring(getenv("HOME"))));
       folderBrowserDialog.set_transient_for(*this);
       if (folderBrowserDialog.run() == RESPONSE_OK)
-        this->label.set_text(ustring::compose("Path = %1", ustring(folderBrowserDialog.get_current_folder())));
+        label.set_text(ustring::compose("Path = %1", ustring(folderBrowserDialog.get_current_folder())));
       return true;
     });
 
-    this->label.set_text("Path = ");
-    this->fixed.add(this->label);
-    this->fixed.move(this->label, 10, 50);
+    label.set_text("Path = ");
+    fixed.add(label);
+    fixed.move(label, 10, 50);
 
-    this->set_title("FolderBrowserDialog example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("FolderBrowserDialog example");
+    resize(300, 300);
+    show_all();
   }
   
 private:

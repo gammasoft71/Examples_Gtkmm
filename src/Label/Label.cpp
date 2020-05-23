@@ -6,16 +6,16 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->label1.set_text("label1");
-    this->fixed.add(this->label1);
-    this->fixed.move(this->label1, 10, 10);
+    label1.set_text("label1");
+    fixed.add(label1);
+    fixed.move(label1, 10, 10);
     
-    this->set_title("Label example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("Label example");
+    resize(300, 300);
+    show_all();
   }
   
 private:

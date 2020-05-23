@@ -6,22 +6,22 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->fixed.add(this->panel1);
-    this->fixed.move(this->panel1, 10, 10);
-    this->panel1.set_size_request(305, 460);
-    this->panel1.set_shadow_type(Gtk::SHADOW_IN);
+    fixed.add(panel1);
+    fixed.move(panel1, 10, 10);
+    panel1.set_size_request(305, 460);
+    panel1.set_shadow_type(Gtk::SHADOW_IN);
     
-    this->fixed.add(this->panel2);
-    this->fixed.move(this->panel2, 325, 10);
-    this->panel2.set_size_request(305, 460);
-    this->panel2.set_shadow_type(Gtk::SHADOW_ETCHED_IN);
+    fixed.add(panel2);
+    fixed.move(panel2, 325, 10);
+    panel2.set_size_request(305, 460);
+    panel2.set_shadow_type(Gtk::SHADOW_ETCHED_IN);
 
-    this->set_title("Panel example");
-    this->resize(640, 480);
-    this->show_all();
+    set_title("Panel example");
+    resize(640, 480);
+    show_all();
   }
   
 private:

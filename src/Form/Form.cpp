@@ -5,21 +5,21 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->scrolledWindow.add(this->fixed);
+    scrolledWindow.add(fixed);
     
-    this->button.set_label("Close");
-    this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
-      this->close();
+    button.set_label("Close");
+    button.signal_button_release_event().connect([&](GdkEventButton* event) {
+      close();
       return true;
     });
-    this->fixed.add(this->button);
-    this->fixed.move(this->button, 10, 10);
+    fixed.add(button);
+    fixed.move(button, 10, 10);
 
-    this->set_title("Form Example");
-    this->move(320, 200);
-    this->resize(640, 480);
-    this->add(this->scrolledWindow);
-    this->show_all();
+    set_title("Form Example");
+    move(320, 200);
+    resize(640, 480);
+    add(scrolledWindow);
+    show_all();
   }
 
   bool on_delete_event(GdkEventAny* any_event) override {
@@ -28,7 +28,7 @@ public:
     dialog.set_modal();
     dialog.set_position(WindowPosition::WIN_POS_CENTER);
     if (dialog.run() == RESPONSE_YES)
-      return this->Window::on_delete_event(any_event);
+      return Window::on_delete_event(any_event);
     return true;
   }
   

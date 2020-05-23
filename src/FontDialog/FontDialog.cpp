@@ -7,22 +7,22 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->button.set_label("Font...");
-    this->fixed.add(this->button);
-    this->fixed.move(this->button, 10, 10);
-    this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
+    button.set_label("Font...");
+    fixed.add(button);
+    fixed.move(button, 10, 10);
+    button.signal_button_release_event().connect([&](GdkEventButton* event) {
       Gtk::FontChooserDialog fontDialog("");
       fontDialog.set_transient_for(*this);
-      fontDialog.set_font_desc(this->label.get_style_context()->get_font());
+      fontDialog.set_font_desc(label.get_style_context()->get_font());
       if (fontDialog.run() == RESPONSE_OK)
-        this->label.override_font(fontDialog.get_font_desc());
+        label.override_font(fontDialog.get_font_desc());
       return true;
     });
 
-    this->label.set_text("The quick brown fox jumps over the lazy dog.\n"
+    label.set_text("The quick brown fox jumps over the lazy dog.\n"
                          "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\n"
                          "0123456789+-*/%~^&|=<>≤≥±÷≠{{[()]}},;:.?¿!¡\n"
                          "àçéèêëïî@@°_#§$ù£€æœøπµ©®∞\\\"'\n"
@@ -31,12 +31,12 @@ public:
                          "\u4ea0\u4ea1\u4ea2\u4ea3\u4ea4\u4ea5\u4ea6\u4ea7\u4ea8\u4ea9\u4eaa\u4eab\u4eac\u4ead\u4eae\u4eaf\n"
                          "\u4eb0\u4eb1\u4eb2\u4eb3\u4eb4\u4eb5\u4eb6\u4eb7\u4eb8\u4eb9\u4eba\u4ebb\u4ebc\u4ebd\u4ebe\u4ebf\n"
                          "\U0001F428");
-    this->fixed.add(this->label);
-    this->fixed.move(this->label, 10, 50);
+    fixed.add(label);
+    fixed.move(label, 10, 50);
 
-    this->set_title("FontDialog example");
-    this->resize(400, 400);
-    this->show_all();
+    set_title("FontDialog example");
+    resize(400, 400);
+    show_all();
   }
   
 private:

@@ -3,31 +3,31 @@
 using namespace Glib;
 using namespace Gtk;
 
-class Form : public Window {
+class WindowMain : public Window {
 public:
-  Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+  WindowMain() {
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->checkBox1.set_label("Checked");
-    this->checkBox1.set_active(true);
-    this->fixed.add(this->checkBox1);
-    this->fixed.move(this->checkBox1, 30, 30);
+    checkBox1.set_label("Checked");
+    checkBox1.set_active(true);
+    fixed.add(checkBox1);
+    fixed.move(checkBox1, 30, 30);
     
-    this->checkBox2.set_label("Unchecked");
-    this->checkBox2.set_active(false);
-    this->fixed.add(this->checkBox2);
-    this->fixed.move(this->checkBox2, 30, 60);
+    checkBox2.set_label("Unchecked");
+    checkBox2.set_active(false);
+    fixed.add(checkBox2);
+    fixed.move(checkBox2, 30, 60);
     
-    this->checkBox3.set_label("Indeterminate");
-    this->checkBox3.set_inconsistent(true);
-    this->checkBox3.set_active(false);
-    this->fixed.add(this->checkBox3);
-    this->fixed.move(this->checkBox3, 30, 90);
+    checkBox3.set_label("Indeterminate");
+    checkBox3.set_active(true);
+    checkBox3.set_inconsistent(true);
+    fixed.add(checkBox3);
+    fixed.move(checkBox3, 30, 90);
 
-    this->set_title("CheckBox example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("CheckBox example");
+    resize(300, 300);
+    show_all();
   }
   
 private:
@@ -39,7 +39,7 @@ private:
 };
 
 int main(int argc, char* argv[]) {
-  RefPtr<Application> application = Application::create(argc, argv);
-  Form form;
-  return application->run(form);
+  auto application = Application::create(argc, argv);
+  WindowMain window;
+  return application->run(window);
 }

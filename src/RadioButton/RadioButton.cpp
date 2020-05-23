@@ -6,28 +6,28 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->radioButton1.set_label("radioButton 1");
-    this->radioButton1.set_active(true);
-    this->radioButton1.set_group(this->radioButtonGroup1);
-    this->fixed.add(this->radioButton1);
-    this->fixed.move(this->radioButton1, 30, 30);
+    radioButton1.set_label("radioButton 1");
+    radioButton1.set_active(true);
+    radioButton1.set_group(radioButtonGroup1);
+    fixed.add(radioButton1);
+    fixed.move(radioButton1, 30, 30);
     
-    this->radioButton2.set_label("radioButton 2");
-    this->radioButton2.set_group(this->radioButtonGroup1);
-    this->fixed.add(this->radioButton2);
-    this->fixed.move(this->radioButton2, 30, 60);
+    radioButton2.set_label("radioButton 2");
+    radioButton2.set_group(radioButtonGroup1);
+    fixed.add(radioButton2);
+    fixed.move(radioButton2, 30, 60);
     
-    this->radioButton3.set_label("radioButton 3");
-    this->radioButton3.set_group(this->radioButtonGroup1);
-    this->fixed.add(this->radioButton3);
-    this->fixed.move(this->radioButton3, 30, 90);
+    radioButton3.set_label("radioButton 3");
+    radioButton3.set_group(radioButtonGroup1);
+    fixed.add(radioButton3);
+    fixed.move(radioButton3, 30, 90);
 
-    this->set_title("RadioButton example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("RadioButton example");
+    resize(300, 300);
+    show_all();
   }
   
 private:

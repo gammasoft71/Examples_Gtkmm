@@ -6,21 +6,21 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->fixed.add(this->panel1);
-    this->fixed.move(this->panel1, 10, 10);
-    this->panel1.set_shadow_type(Gtk::SHADOW_IN);
-    this->panel1.set_size_request(280, 280);
+    fixed.add(panel1);
+    fixed.move(panel1, 10, 10);
+    panel1.set_shadow_type(Gtk::SHADOW_IN);
+    panel1.set_size_request(280, 280);
 
-    this->panel1.add(this->pictureBox1);
-    this->pictureBox1.set_size_request(280, 280);
-    this->pictureBox1.set("Resources/Logo.png");
+    panel1.add(pictureBox1);
+    pictureBox1.set_size_request(280, 280);
+    pictureBox1.set("Resources/Logo.png");
 
-    this->set_title("PictureBox example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("PictureBox example");
+    resize(300, 300);
+    show_all();
   }
   
 private:

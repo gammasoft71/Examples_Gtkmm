@@ -7,13 +7,13 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->button.set_label("MessageBox");
-    this->fixed.add(this->button);
-    this->fixed.move(this->button, 10, 10);
-    this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
+    button.set_label("MessageBox");
+    fixed.add(button);
+    fixed.move(button, 10, 10);
+    button.signal_button_release_event().connect([&](GdkEventButton* event) {
       MessageDialog messageBox(*this, "Hello, World!", true, MESSAGE_INFO, BUTTONS_OK_CANCEL, true);
       messageBox.set_title("Message");
       messageBox.set_modal();
@@ -23,13 +23,13 @@ public:
       return true;
     });
 
-    this->labelDialogResult.set_text("");
-    this->fixed.add(this->labelDialogResult);
-    this->fixed.move(this->labelDialogResult, 10, 50);
+    labelDialogResult.set_text("");
+    fixed.add(labelDialogResult);
+    fixed.move(labelDialogResult, 10, 50);
 
-    this->set_title("MessageBox example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("MessageBox example");
+    resize(300, 300);
+    show_all();
   }
   
 private:

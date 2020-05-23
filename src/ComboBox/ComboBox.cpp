@@ -7,20 +7,20 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
 
-    this->fixed.add(this->comboBox1);
-    this->fixed.move(this->comboBox1, 10, 10);
+    fixed.add(comboBox1);
+    fixed.move(comboBox1, 10, 10);
 
-    this->comboBox1.append("item1");
-    this->comboBox1.append("item2");
-    this->comboBox1.append("item3");
-    this->comboBox1.set_active(1);
+    comboBox1.append("item1");
+    comboBox1.append("item2");
+    comboBox1.append("item3");
+    comboBox1.set_active(1);
 
-    this->set_title("ComboBox example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("ComboBox example");
+    resize(300, 300);
+    show_all();
   }
   
 private:

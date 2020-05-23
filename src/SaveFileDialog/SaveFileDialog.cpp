@@ -7,13 +7,13 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->button.set_label("Save...");
-    this->fixed.add(this->button);
-    this->fixed.move(this->button, 10, 10);
-    this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
+    button.set_label("Save...");
+    fixed.add(button);
+    fixed.move(button, 10, 10);
+    button.signal_button_release_event().connect([&](GdkEventButton* event) {
       FileChooserDialog saveFileDialog("", FILE_CHOOSER_ACTION_SAVE);
       saveFileDialog.add_button("Cancel", RESPONSE_CANCEL);
       saveFileDialog.add_button("Open", RESPONSE_OK);
@@ -31,17 +31,17 @@ public:
       saveFileDialog.add_filter(fileFilter);
       
       if (saveFileDialog.run() == RESPONSE_OK)
-        this->label.set_text(ustring::compose("File = %1", ustring(saveFileDialog.get_filename())));
+        label.set_text(ustring::compose("File = %1", ustring(saveFileDialog.get_filename())));
       return true;
     });
 
-    this->label.set_text("File = ");
-    this->fixed.add(this->label);
-    this->fixed.move(this->label, 10, 50);
+    label.set_text("File = ");
+    fixed.add(label);
+    fixed.move(label, 10, 50);
 
-    this->set_title("SaveFileDialog example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("SaveFileDialog example");
+    resize(300, 300);
+    show_all();
   }
   
 private:

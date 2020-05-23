@@ -6,22 +6,22 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->groupBox1.set_label("GroupBox 1");
-    this->fixed.add(this->groupBox1);
-    this->fixed.move(this->groupBox1, 10, 10);
-    this->groupBox1.set_size_request(305, 460);
+    groupBox1.set_label("GroupBox 1");
+    fixed.add(groupBox1);
+    fixed.move(groupBox1, 10, 10);
+    groupBox1.set_size_request(305, 460);
     
-    this->groupBox2.set_label("GroupBox 2");
-    this->fixed.add(this->groupBox2);
-    this->fixed.move(this->groupBox2, 325, 10);
-    this->groupBox2.set_size_request(305, 460);
+    groupBox2.set_label("GroupBox 2");
+    fixed.add(groupBox2);
+    fixed.move(groupBox2, 325, 10);
+    groupBox2.set_size_request(305, 460);
 
-    this->set_title("GroupBox example");
-    this->resize(640, 480);
-    this->show_all();
+    set_title("GroupBox example");
+    resize(640, 480);
+    show_all();
   }
   
 private:

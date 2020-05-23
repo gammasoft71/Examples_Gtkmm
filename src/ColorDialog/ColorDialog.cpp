@@ -3,29 +3,29 @@
 using namespace Glib;
 using namespace Gtk;
 
-class Form : public Window {
+class WindowMain : public Window {
 public:
-  Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+  WindowMain() {
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->button.set_label("Color...");
-    this->fixed.add(this->button);
-    this->fixed.move(this->button, 10, 10);
-    this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
+    button.set_label("Color...");
+    fixed.add(button);
+    fixed.move(button, 10, 10);
+    button.signal_button_release_event().connect([&](GdkEventButton*) {
       ColorChooserDialog colorDialog("");
-      colorDialog.set_rgba(this->get_style_context()->get_background_color());
+      colorDialog.set_rgba(get_style_context()->get_background_color());
       colorDialog.set_transient_for(*this);
       colorDialog.set_modal(true);
       if (colorDialog.run() == RESPONSE_OK)
-        this->override_background_color(colorDialog.get_rgba());
+        override_background_color(colorDialog.get_rgba());
       return true;
     });
 
     
-    this->set_title("ColorDialog example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("ColorDialog example");
+    resize(300, 300);
+    show_all();
   }
   
 private:
@@ -35,7 +35,7 @@ private:
 };
 
 int main(int argc, char* argv[]) {
-  RefPtr<Application> application = Application::create(argc, argv);
-  Form form;
-  return application->run(form);
+  auto application = Application::create(argc, argv);
+  WindowMain window;
+  return application->run(window);
 }

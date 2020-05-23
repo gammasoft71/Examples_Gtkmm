@@ -32,33 +32,9 @@ using namespace std;
 using namespace std::string_literals;
 
 int main(int argc, char* argv[]) {
-  any a;
-  cout << "a " << (a.has_value() ? "hasn't" : "has") << " value" << endl;
-  cout << endl;
-
-  // Assign integer to a
-  a = 42;
-  cout << "a " << (any_cast<int32_t*>(&a) != nullptr ? "is" : "isn't") << " int" << endl;
-  cout << "a " << (any_cast<string*>(&a) != nullptr ? "is" : "isn't") << " string" << endl;
-  cout << "a = " << any_cast<int32_t>(a) << endl;
-  int32_t i = any_cast<int32_t>(a);
-  cout << "i = " << i << endl;
-  cout << endl;
-
-  // Assign string to a
-  a = "Hello, World!"s;
-  cout << "a " << (any_cast<int32_t*>(&a) != nullptr ? "is" : "isn't") << " int" << endl;
-  cout << "a " << (any_cast<string*>(&a) != nullptr ? "is" : "isn't") << " string" << endl;
-  cout << "a = " << any_cast<string>(a) << endl;
-  string s = any_cast<string>(a);
-  cout << "s = " << s << endl;
-  cout << endl;
-
-  /*
   GtkApplication* application = gtk_application_new("org.gammasoft71.Test", G_APPLICATION_FLAGS_NONE);
   g_signal_connect(application, "activate", G_CALLBACK(OnApplicationActivate), nullptr);
   int result = g_application_run(G_APPLICATION(application), argc, argv);
   g_object_unref(application);
   return result;
-  */
 }

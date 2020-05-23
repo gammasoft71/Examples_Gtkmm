@@ -7,37 +7,37 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->label.set_text(ustring::format(std::fixed, std::setprecision(1), (double)this->counter / 10));
-    this->label.override_color(Gdk::RGBA("#1E90FF"));
+    label.set_text(ustring::format(std::fixed, std::setprecision(1), (double)counter / 10));
+    label.override_color(Gdk::RGBA("#1E90FF"));
     Pango::FontDescription textFont("Arial");
     textFont.set_size(48 * PANGO_SCALE);
     textFont.set_style(Pango::Style::STYLE_ITALIC);
     textFont.set_weight(Pango::Weight::WEIGHT_BOLD);
-    this->label.override_font(textFont);
-    this->fixed.add(this->label);
-    this->fixed.move(this->label, 10, 10);
+    label.override_font(textFont);
+    fixed.add(label);
+    fixed.move(label, 10, 10);
 
-    this->button.set_label("Start");
-    this->fixed.add(this->button);
-    this->fixed.move(this->button, 10, 90);
-    this->button.signal_button_release_event().connect([&](GdkEventButton* event) {
-      this->enableTimer = !this->enableTimer;
-      this->button.set_label(this->enableTimer ? "Stop" : "Start");
-      if (this->enableTimer) {
+    button.set_label("Start");
+    fixed.add(button);
+    fixed.move(button, 10, 90);
+    button.signal_button_release_event().connect([&](GdkEventButton* event) {
+      enableTimer = !enableTimer;
+      button.set_label(enableTimer ? "Stop" : "Start");
+      if (enableTimer) {
         signal_timeout().connect([&] {
-          this->label.set_text(ustring::format(std::fixed, std::setprecision(1), (double)++this->counter / 10));
-          return this->enableTimer;
+          label.set_text(ustring::format(std::fixed, std::setprecision(1), (double)++counter / 10));
+          return enableTimer;
         }, 100);
       }
       return true;
     });
 
-    this->set_title("Timer example");
-    this->resize(230, 130);
-    this->show_all();
+    set_title("Timer example");
+    resize(230, 130);
+    show_all();
   }
   
 private:

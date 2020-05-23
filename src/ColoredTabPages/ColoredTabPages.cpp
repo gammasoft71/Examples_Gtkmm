@@ -3,29 +3,29 @@
 using namespace Glib;
 using namespace Gtk;
 
-class Form : public Window {
+class WindowMain : public Window {
 public:
-  Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+  WindowMain() {
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->tabControl1.set_size_request(370, 250);
-    fixed.add(this->tabControl1);
-    this->fixed.move(this->tabControl1, 10, 10);
+    tabControl1.set_size_request(370, 250);
+    fixed.add(tabControl1);
+    fixed.move(tabControl1, 10, 10);
 
-    this->tabControl1.insert_page(this->tabPageRed, "Red", 0);
-    this->tabControl1.insert_page(this->tabPageGreen, "Green", 1);
-    this->tabControl1.insert_page(this->tabPageBlue, "Blue", 2);
-    this->tabControl1.insert_page(this->tabPageYellow, "Yellow", 3);
+    tabControl1.insert_page(tabPageRed, "Red", 0);
+    tabControl1.insert_page(tabPageGreen, "Green", 1);
+    tabControl1.insert_page(tabPageBlue, "Blue", 2);
+    tabControl1.insert_page(tabPageYellow, "Yellow", 3);
     
-    this->tabPageRed.override_background_color(Gdk::RGBA("#FF0000"));
-    this->tabPageGreen.override_background_color(Gdk::RGBA("#008000"));
-    this->tabPageBlue.override_background_color(Gdk::RGBA("#0000FF"));
-    this->tabPageYellow.override_background_color(Gdk::RGBA("#FFFF00"));
+    tabPageRed.override_background_color(Gdk::RGBA("#FF0000"));
+    tabPageGreen.override_background_color(Gdk::RGBA("#008000"));
+    tabPageBlue.override_background_color(Gdk::RGBA("#0000FF"));
+    tabPageYellow.override_background_color(Gdk::RGBA("#FFFF00"));
 
-    this->set_title("Colored TabPages example");
-    this->resize(390, 270);
-    this->show_all();
+    set_title("Colored TabPages example");
+    resize(390, 270);
+    show_all();
   }
   
 private:
@@ -39,7 +39,7 @@ private:
 };
 
 int main(int argc, char* argv[]) {
-  RefPtr<Application> application = Application::create(argc, argv);
-  Form form;
-  return application->run(form);
+  auto application = Application::create(argc, argv);
+  WindowMain window;
+  return application->run(window);
 }

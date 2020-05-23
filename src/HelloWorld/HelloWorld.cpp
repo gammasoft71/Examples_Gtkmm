@@ -6,23 +6,23 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->label1.set_text("Hello, World!");
-    this->label1.override_color(Gdk::RGBA("#008000"));
+    label1.set_text("Hello, World!");
+    label1.override_color(Gdk::RGBA("#008000"));
     Pango::FontDescription textFont;
     textFont.set_family("Arial");
     textFont.set_size(34 * PANGO_SCALE);
     textFont.set_style(Pango::Style::STYLE_ITALIC);
     textFont.set_weight(Pango::Weight::WEIGHT_BOLD);
-    this->label1.override_font(textFont);
-    this->fixed.add(this->label1);
-    this->fixed.move(this->label1, 5, 100);
+    label1.override_font(textFont);
+    fixed.add(label1);
+    fixed.move(label1, 5, 100);
     
-    this->set_title("My first application");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("My first application");
+    resize(300, 300);
+    show_all();
   }
   
 private:

@@ -3,40 +3,40 @@
 using namespace Glib;
 using namespace Gtk;
 
-class Form : public Window {
+class WindowMain : public Window {
 public:
-  Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+  WindowMain() {
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
     
-    this->button1.set_label("button1");
-    this->button1.signal_button_release_event().connect([&](GdkEventButton* event) {
-      this->label1.set_text(ustring::compose("button1 clicked %1 times", ++this->button1Clicked));
+    button1.set_label("button1");
+    button1.signal_button_release_event().connect([&](GdkEventButton*) {
+      label1.set_text(ustring::compose("button1 clicked %1 times", ++button1Clicked));
       return true;
     });
-    this->fixed.add(this->button1);
-    this->fixed.move(this->button1, 50, 50);
+    fixed.add(button1);
+    fixed.move(button1, 50, 50);
     
-    this->button2.set_label("button2");
-    this->button2.set_size_request(200, 75);
-    this->button2.signal_button_release_event().connect([&](GdkEventButton* event) {
-      this->label2.set_text(ustring::compose("button2 clicked %1 times", ++this->button2Clicked));
+    button2.set_label("button2");
+    button2.set_size_request(200, 75);
+    button2.signal_button_release_event().connect([&](GdkEventButton*) {
+      label2.set_text(ustring::compose("button2 clicked %1 times", ++button2Clicked));
       return true;
     });
-    this->fixed.add(this->button2);
-    this->fixed.move(this->button2, 50, 100);
+    fixed.add(button2);
+    fixed.move(button2, 50, 100);
+
+    label1.set_text(ustring::compose("button1 clicked %1 times", button1Clicked));
+    fixed.add(label1);
+    fixed.move(label1, 50, 200);
     
-    this->label1.set_text(ustring::compose("button1 clicked %1 times", this->button1Clicked));
-    this->fixed.add(this->label1);
-    this->fixed.move(this->label1, 50, 200);
+    label2.set_text(ustring::compose("button2 clicked %1 times", button2Clicked));
+    fixed.add(label2);
+    fixed.move(label2, 50, 230);
     
-    this->label2.set_text(ustring::compose("button2 clicked %1 times", this->button2Clicked));
-    this->fixed.add(this->label2);
-    this->fixed.move(this->label2, 50, 230);
-    
-    this->set_title("Button example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("Button example");
+    resize(300, 300);
+    show_all();
   }
   
 private:
@@ -51,7 +51,10 @@ private:
 };
 
 int main(int argc, char* argv[]) {
-  RefPtr<Application> application = Application::create(argc, argv);
-  Form form;
-  return application->run(form);
+    g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", true, NULL);
+    g_object_set(gtk_settings_get_default(), "gtk-button-images", true, NULL);
+  //gtk_settings_set_long_property(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", 0, nullptr);
+  auto application = Application::create(argc, argv);
+  WindowMain window;
+  return application->run(window);
 }

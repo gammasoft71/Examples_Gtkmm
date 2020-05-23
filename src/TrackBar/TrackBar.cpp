@@ -6,30 +6,30 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
 
-    this->fixed.add(this->trackBar);
-    this->fixed.move(this->trackBar, 20, 50);
-    this->trackBar.set_size_request(200, 10);
-    this->trackBar.set_range(0.0, 200.0);
-    this->trackBar.set_draw_value(false);
-    this->trackBar.signal_value_changed().connect([&] {
-      this->progressBar.set_fraction(this->trackBar.get_value() / 200.0);
-      this->label.set_text(ustring::compose("%1", (int)this->trackBar.get_value()));
+    fixed.add(trackBar);
+    fixed.move(trackBar, 20, 50);
+    trackBar.set_size_request(200, 10);
+    trackBar.set_range(0.0, 200.0);
+    trackBar.set_draw_value(false);
+    trackBar.signal_value_changed().connect([&] {
+      progressBar.set_fraction(trackBar.get_value() / 200.0);
+      label.set_text(ustring::compose("%1", (int)trackBar.get_value()));
     });
-    this->trackBar.set_value(100);
+    trackBar.set_value(100);
 
-    this->fixed.add(this->progressBar);
-    this->fixed.move(this->progressBar, 20, 100);
-    this->progressBar.set_size_request(200, 10);
+    fixed.add(progressBar);
+    fixed.move(progressBar, 20, 100);
+    progressBar.set_size_request(200, 10);
 
-    this->fixed.add(this->label);
-    this->fixed.move(this->label, 20, 150);
+    fixed.add(label);
+    fixed.move(label, 20, 150);
     
-    this->set_title("TrackBar example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("TrackBar example");
+    resize(300, 300);
+    show_all();
   }
   
 private:

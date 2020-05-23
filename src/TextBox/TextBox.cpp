@@ -6,20 +6,20 @@ using namespace Gtk;
 class Form : public Window {
 public:
   Form() {
-    this->add(this->scrolledWindow);
-    this->scrolledWindow.add(this->fixed);
+    add(scrolledWindow);
+    scrolledWindow.add(fixed);
 
-    this->textBox1.set_text("textBox1");
-    this->fixed.add(this->textBox1);
-    this->fixed.move(this->textBox1, 10, 10);
+    textBox1.set_text("textBox1");
+    fixed.add(textBox1);
+    fixed.move(textBox1, 10, 10);
 
-    this->textBox2.set_text("textBox2");
-    this->fixed.add(this->textBox2);
-    this->fixed.move(this->textBox2, 10, 50);
+    textBox2.set_text("textBox2");
+    fixed.add(textBox2);
+    fixed.move(textBox2, 10, 50);
 
-    this->set_title("TextBox example");
-    this->resize(300, 300);
-    this->show_all();
+    set_title("TextBox example");
+    resize(300, 300);
+    show_all();
   }
   
 private:
