@@ -3,6 +3,8 @@
 
 Shows how to use Gtkmm controls (c++17).
 
+[![gtkmm](docs/Pictures/gtkmm_header.png)](https://gammasoft71.wixsite.com/gammasoft/gtkmm)
+
 ## Hello World
 
 ["Hello World"](src/HelloWorld) The classic first application HelloWorld with Gtk::Label.
